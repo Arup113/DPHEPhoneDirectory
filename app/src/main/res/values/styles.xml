@@ -1,0 +1,129 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme" parent="AppTheme.Base" />
+
+    <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar" />
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="AppTheme.NoActionBar.CustomAnimation" />
+
+    <style name="AppTheme.NoActionBar.TransparentStatusBar" />
+
+    <!-- Base application theme. -->
+    <style name="AppThemeSplash" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@color/bg_color</item>
+    </style>
+
+    <style name="ButtonRoundDefault" parent="@style/Widget.AppCompat.Button">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:fontFamily">@font/circular_std_black</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="ButtonRoundBlue" parent="@style/ButtonRoundDefault">
+        <item name="android:background">@drawable/button_login</item>
+    </style>
+
+    <style name="ButtonRoundPink" parent="@style/ButtonRoundDefault">
+        <item name="android:background">@drawable/button_signup</item>
+    </style>
+
+    <style name="TextCardHeader" parent="@android:style/TextAppearance">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/ash_dark</item>
+        <item name="android:fontFamily">@font/circular_std_bold</item>
+    </style>
+
+    <style name="TextPageHeader" parent="@android:style/TextAppearance">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/ash_dark</item>
+        <item name="android:fontFamily">@font/circular_std_bold</item>
+    </style>
+
+    <style name="AppCompatAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">#5fa3d0</item>
+        <item name="android:textColorPrimary">#000000</item>
+        <item name="android:background">#FFFFFF</item>
+    </style>
+
+    <style name="TextMessageBody" parent="@android:style/TextAppearance">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/circular_std_book</item>
+        <item name="android:textColor">@color/ash_dark</item>
+    </style>
+
+    <style name="TextH6" parent="@android:style/TextAppearance">
+        <item name="android:textSize">48sp</item>
+        <item name="android:fontFamily">@font/circular_std_bold</item>
+        <item name="android:textColor">@color/ash_dark</item>
+    </style>
+
+    <style name="TextH5" parent="@android:style/TextAppearance">
+        <item name="android:textSize">42sp</item>
+        <item name="android:fontFamily">@font/circular_std_bold</item>
+        <item name="android:textColor">@color/ash_semi_dark</item>
+    </style>
+
+    <style name="TextH4" parent="@android:style/TextAppearance">
+        <item name="android:textSize">36sp</item>
+        <item name="android:fontFamily">@font/circular_std_black</item>
+        <item name="android:textColor">@color/ash_dark</item>
+    </style>
+
+    <style name="TextH3" parent="@android:style/TextAppearance">
+        <item name="android:textSize">30sp</item>
+        <item name="android:fontFamily">@font/circular_std_black</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="TextH2" parent="@android:style/TextAppearance">
+        <item name="android:textSize">24sp</item>
+        <item name="android:fontFamily">@font/circular_std_black</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="TextH1" parent="@android:style/TextAppearance">
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">@font/circular_std_medium</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextNavItem" parent="@android:style/TextAppearance">
+        <item name="android:fontFamily">@font/circular_std_bold</item>
+        <item name="android:textColor">@color/selector_nav_item_color</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="TextListTitle" parent="@android:style/TextAppearance">
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">@font/circular_std_medium</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="TextListSubTitle" parent="@android:style/TextAppearance">
+        <item name="android:textSize">15sp</item>
+        <item name="android:fontFamily">@font/circular_std_book</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+</resources>

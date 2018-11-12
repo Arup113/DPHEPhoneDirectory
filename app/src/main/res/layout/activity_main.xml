@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary">
+
+        <ImageView
+            android:id="@+id/image_app_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/app_logo"
+            android:src="@drawable/toolbar"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_0dp"
+            android:background="@color/bg_color"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/image_app_name">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/size_40dp">
+
+                <TextView
+                    android:id="@+id/app_name_tv"
+                    style="@style/TextH3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/size_80dp"
+                    android:text="@string/app_name"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/header_tv"
+                    style="@style/TextH2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/size_40dp"
+                    android:text="@string/contact"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/app_name_tv" />
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/card_view_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/size_40dp"
+                    android:layout_marginTop="@dimen/size_20dp"
+                    android:layout_marginEnd="@dimen/size_40dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:layout_constraintTop_toBottomOf="@+id/header_tv"
+                    card_view:cardBackgroundColor="@color/colorAccent"
+                    card_view:cardCornerRadius="@dimen/size_5dp"
+                    card_view:cardElevation="@dimen/size_5dp">
+
+                    <TextView
+                        style="@style/TextH1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:padding="@dimen/size_20dp"
+                        android:text="@string/head_quarter" />
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/card_view_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/size_40dp"
+                    android:layout_marginTop="@dimen/size_20dp"
+                    android:layout_marginEnd="@dimen/size_40dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:layout_constraintTop_toBottomOf="@+id/card_view_1"
+                    card_view:cardBackgroundColor="@color/colorAccent"
+                    card_view:cardCornerRadius="@dimen/size_5dp"
+                    card_view:cardElevation="@dimen/size_5dp">
+
+                    <TextView
+                        style="@style/TextH1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:padding="@dimen/size_20dp"
+                        android:text="@string/project_office" />
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/card_view_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/size_40dp"
+                    android:layout_marginTop="@dimen/size_20dp"
+                    android:layout_marginEnd="@dimen/size_40dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:layout_constraintTop_toBottomOf="@+id/card_view_2"
+                    card_view:cardBackgroundColor="@color/colorAccent"
+                    card_view:cardCornerRadius="@dimen/size_5dp"
+                    card_view:cardElevation="@dimen/size_5dp">
+
+                    <TextView
+                        style="@style/TextH1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:padding="@dimen/size_20dp"
+                        android:text="@string/circle_district_office" />
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/card_view_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/size_40dp"
+                    android:layout_marginTop="@dimen/size_20dp"
+                    android:layout_marginEnd="@dimen/size_40dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:layout_constraintTop_toBottomOf="@+id/card_view_3"
+                    card_view:cardBackgroundColor="@color/colorAccent"
+                    card_view:cardCornerRadius="@dimen/size_5dp"
+                    card_view:cardElevation="@dimen/size_5dp">
+
+                    <TextView
+                        style="@style/TextH1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:padding="@dimen/size_20dp"
+                        android:text="@string/laboratory" />
+                </android.support.v7.widget.CardView>
+            </android.support.constraint.ConstraintLayout>
+        </android.support.v4.widget.NestedScrollView>
+    </android.support.constraint.ConstraintLayout>
+</layout>
