@@ -47,11 +47,7 @@ public class StringUtils {
         if (myString == null) {
             return true;
         }
-        if (myString.length() == 0 || myString.equalsIgnoreCase("null")
-                || myString.equalsIgnoreCase("")) {
-            return true;
-        }
-        return false;
+        return myString.length() == 0 || myString.equalsIgnoreCase("null");
     }
 
 }

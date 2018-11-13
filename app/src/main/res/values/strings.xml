@@ -95,6 +95,10 @@
     <string name="project_office">Project Office</string>
     <string name="head_quarter">Head Quarter</string>
     <string name="contact">Contact</string>
+    <string name="office">Office</string>
+    <string name="telephone">Telephone</string>
+    <string name="fax">Fax</string>
+    <string name="email">Email</string>
 
     <string-array name="head_quarter">
         <item><![CDATA[CE & Addl. CE Office]]></item>

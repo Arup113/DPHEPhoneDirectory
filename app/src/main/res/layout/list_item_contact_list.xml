@@ -18,8 +18,8 @@
 
         <android.support.v7.widget.AppCompatImageView
             android:id="@+id/user_iv"
-            android:layout_width="@dimen/size_70dp"
-            android:layout_height="@dimen/size_70dp"
+            android:layout_width="@dimen/size_50dp"
+            android:layout_height="@dimen/size_50dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -31,7 +31,6 @@
             android:layout_width="@dimen/size_0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/size_5dp"
-            android:layout_marginTop="@dimen/size_5dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/user_iv"
             app:layout_constraintTop_toTopOf="parent"

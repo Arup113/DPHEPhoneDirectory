@@ -13,16 +13,17 @@
  * limitations under the License
  */
 
-package com.nurdcoder.android.dphe_phone_directory.data.local.user;
+package com.nurdcoder.android.dphe_phone_directory.data.local.contact_list;
 
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
-import android.arch.persistence.room.Index;
-import android.support.annotation.NonNull;
+import android.os.Parcel;
+import android.os.Parcelable;
 
 import com.nurdcoder.android.dphe_phone_directory.data.local.base.RoomEntity;
 import com.nurdcoder.android.dphe_phone_directory.data.local.dbstorage.ColumnNames;
 import com.nurdcoder.android.dphe_phone_directory.data.local.dbstorage.TableNames;
+import com.nurdcoder.android.util.helper.StringUtils;
 
 import java.util.Objects;
 
@@ -47,7 +48,7 @@ import java.util.Objects;
  */
 
 @Entity(tableName = TableNames.CONTACT_LIST)
-public class ContactEntity extends RoomEntity {
+public class ContactEntity extends RoomEntity implements Parcelable {
     @ColumnInfo(name = ColumnNames.NAME_OF_THE_STAFF)
     public String NAME_OF_THE_STAFF;
     @ColumnInfo(name = ColumnNames.TELEPHONE)
@@ -76,9 +77,17 @@ public class ContactEntity extends RoomEntity {
         this.SUBCATEGORY = SUBCATEGORY;
     }
 
-    public String getNAME_OF_THE_STAFF() {
-        return NAME_OF_THE_STAFF;
-    }
+    public static final Parcelable.Creator<ContactEntity> CREATOR = new Parcelable.Creator<ContactEntity>() {
+        @Override
+        public ContactEntity createFromParcel(Parcel source) {
+            return new ContactEntity(source);
+        }
+
+        @Override
+        public ContactEntity[] newArray(int size) {
+            return new ContactEntity[size];
+        }
+    };
 
     public void setNAME_OF_THE_STAFF(String NAME_OF_THE_STAFF) {
         this.NAME_OF_THE_STAFF = NAME_OF_THE_STAFF;
@@ -108,16 +117,26 @@ public class ContactEntity extends RoomEntity {
         this.FAX = FAX;
     }
 
-    public String getDESIGNATION() {
-        return DESIGNATION;
+    protected ContactEntity(Parcel in) {
+        this.NAME_OF_THE_STAFF = in.readString();
+        this.TELEPHONE = in.readString();
+        this.EMAIL = in.readString();
+        this.FAX = in.readString();
+        this.DESIGNATION = in.readString();
+        this.OFFICE = in.readString();
+        this.CATEGORY = in.readString();
+        this.SUBCATEGORY = in.readString();
     }
 
     public void setDESIGNATION(String DESIGNATION) {
         this.DESIGNATION = DESIGNATION;
     }
 
-    public String getOFFICE() {
-        return OFFICE;
+    public String getNAME_OF_THE_STAFF() {
+        if (StringUtils.isNullOrEmpty(NAME_OF_THE_STAFF)) {
+            return "Unknown Staff Name";
+        }
+        return NAME_OF_THE_STAFF;
     }
 
     public void setOFFICE(String OFFICE) {
@@ -138,5 +157,72 @@ public class ContactEntity extends RoomEntity {
 
     public void setSUBCATEGORY(String SUBCATEGORY) {
         this.SUBCATEGORY = SUBCATEGORY;
+    }
+
+    public String getDESIGNATION() {
+        if (StringUtils.isNullOrEmpty(DESIGNATION)) {
+            return "Unknown Designation";
+        }
+        return DESIGNATION;
+    }
+
+    public String getOFFICE() {
+        if (StringUtils.isNullOrEmpty(OFFICE)) {
+            return "Unknown Office Address";
+        }
+        return OFFICE;
+    }
+
+    @Override
+    public String toString() {
+        return "ContactEntity{" +
+                "NAME_OF_THE_STAFF='" + NAME_OF_THE_STAFF + '\'' +
+                ", TELEPHONE='" + TELEPHONE + '\'' +
+                ", EMAIL='" + EMAIL + '\'' +
+                ", FAX='" + FAX + '\'' +
+                ", DESIGNATION='" + DESIGNATION + '\'' +
+                ", OFFICE='" + OFFICE + '\'' +
+                ", CATEGORY='" + CATEGORY + '\'' +
+                ", SUBCATEGORY='" + SUBCATEGORY + '\'' +
+                ", mId=" + mId +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof ContactEntity)) return false;
+        ContactEntity that = (ContactEntity) o;
+        return Objects.equals(getNAME_OF_THE_STAFF(), that.getNAME_OF_THE_STAFF()) &&
+                Objects.equals(getTELEPHONE(), that.getTELEPHONE()) &&
+                Objects.equals(getEMAIL(), that.getEMAIL()) &&
+                Objects.equals(getFAX(), that.getFAX()) &&
+                Objects.equals(getDESIGNATION(), that.getDESIGNATION()) &&
+                Objects.equals(getOFFICE(), that.getOFFICE()) &&
+                Objects.equals(getCATEGORY(), that.getCATEGORY()) &&
+                Objects.equals(getSUBCATEGORY(), that.getSUBCATEGORY());
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(getNAME_OF_THE_STAFF(), getTELEPHONE(), getEMAIL(), getFAX(), getDESIGNATION(), getOFFICE(), getCATEGORY(), getSUBCATEGORY());
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(this.NAME_OF_THE_STAFF);
+        dest.writeString(this.TELEPHONE);
+        dest.writeString(this.EMAIL);
+        dest.writeString(this.FAX);
+        dest.writeString(this.DESIGNATION);
+        dest.writeString(this.OFFICE);
+        dest.writeString(this.CATEGORY);
+        dest.writeString(this.SUBCATEGORY);
     }
 }

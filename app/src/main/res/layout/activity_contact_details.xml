@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary">
+
+        <ImageView
+            android:id="@+id/image_app_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/app_logo"
+            android:src="@drawable/toolbar"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_0dp"
+            android:background="@color/bg_color"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/image_app_name">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/size_40dp">
+
+                <TextView
+                    android:id="@+id/app_name_tv"
+                    style="@style/TextH3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/size_80dp"
+                    android:text="@string/app_name"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:id="@+id/user_iv"
+                    android:layout_width="@dimen/size_100dp"
+                    android:layout_height="@dimen/size_100dp"
+                    android:layout_margin="@dimen/size_40dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/app_name_tv"
+                    app:srcCompat="@drawable/ic_user" />
+
+                <TextView
+                    android:id="@+id/name_tv"
+                    style="@style/TextListTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/size_10dp"
+                    android:gravity="center"
+                    android:singleLine="false"
+                    app:layout_constraintTop_toBottomOf="@+id/user_iv"
+                    tools:text="NAME" />
+
+                <TextView
+                    android:id="@+id/designation_tv"
+                    style="@style/TextListSubTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/size_10dp"
+                    android:gravity="center"
+                    android:singleLine="false"
+                    app:layout_constraintTop_toBottomOf="@+id/name_tv"
+                    tools:text="DESIGNATION" />
+
+                <TextView
+                    android:id="@+id/office_tv"
+                    style="@style/TextListTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/size_20dp"
+                    android:text="@string/office"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/designation_tv" />
+
+                <View
+                    android:id="@+id/horizontal_ev_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size_1dp"
+                    android:layout_marginStart="@dimen/size_20dp"
+                    android:layout_marginEnd="@dimen/size_20dp"
+                    android:background="@color/colorPrimaryDark"
+                    app:layout_constraintTop_toBottomOf="@+id/office_tv" />
+
+                <TextView
+                    android:id="@+id/office_value_tv"
+                    style="@style/TextListSubTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/size_25dp"
+                    android:layout_marginTop="@dimen/size_5dp"
+                    android:layout_marginEnd="@dimen/size_20dp"
+                    android:singleLine="false"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/horizontal_ev_1"
+                    tools:text="rg;s asfdma;dlf as;fla;df as;faofsd;f saa;faf;f;ld a;slf;f;dlfks;ldf;" />
+
+                <TextView
+                    android:id="@+id/telephone_tv"
+                    style="@style/TextListTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/size_20dp"
+                    android:text="@string/telephone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/office_value_tv" />
+
+                <View
+                    android:id="@+id/horizontal_ev_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size_1dp"
+                    android:layout_marginStart="@dimen/size_20dp"
+                    android:layout_marginEnd="@dimen/size_20dp"
+                    android:background="@color/colorPrimaryDark"
+                    app:layout_constraintTop_toBottomOf="@+id/telephone_tv" />
+
+                <TextView
+                    android:id="@+id/telephone_value_tv_1"
+                    style="@style/TextListSubTitle"
+                    android:layout_width="@dimen/size_0dp"
+                    android:layout_height="@dimen/size_0dp"
+                    android:layout_marginStart="@dimen/size_25dp"
+                    android:layout_marginTop="@dimen/size_5dp"
+                    android:layout_marginEnd="@dimen/size_5dp"
+                    android:gravity="center_vertical"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@+id/call_ib_1"
+                    app:layout_constraintEnd_toStartOf="@+id/call_ib_1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/call_ib_1"
+                    tools:text="rg;s asfdma;dlf as;fla;df as;faofsd;f saa;faf;f;ld a;slf;f;dlfks;ldf;"
+                    tools:visibility="visible" />
+
+                <android.support.v7.widget.AppCompatImageButton
+                    android:id="@+id/call_ib_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_5dp"
+                    android:layout_marginEnd="@dimen/size_5dp"
+                    android:background="@color/transparent"
+                    android:padding="@dimen/size_5dp"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toStartOf="@+id/sms_ib_1"
+                    app:layout_constraintTop_toBottomOf="@+id/horizontal_ev_2"
+                    app:srcCompat="@drawable/ic_call"
+                    tools:visibility="visible" />
+
+                <android.support.v7.widget.AppCompatImageButton
+                    android:id="@+id/sms_ib_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_5dp"
+                    android:layout_marginEnd="@dimen/size_20dp"
+                    android:background="@color/transparent"
+                    android:padding="@dimen/size_5dp"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/horizontal_ev_2"
+                    app:srcCompat="@drawable/ic_message"
+                    tools:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/telephone_value_tv_2"
+                    style="@style/TextListSubTitle"
+                    android:layout_width="@dimen/size_0dp"
+                    android:layout_height="@dimen/size_0dp"
+                    android:layout_marginStart="@dimen/size_25dp"
+                    android:layout_marginTop="@dimen/size_5dp"
+                    android:layout_marginEnd="@dimen/size_5dp"
+                    android:gravity="center_vertical"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@+id/call_ib_2"
+                    app:layout_constraintEnd_toStartOf="@+id/call_ib_2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/call_ib_2"
+                    tools:text="rg;s asfdma;dlf as;fla;df as;faofsd;f saa;faf;f;ld a;slf;f;dlfks;ldf;"
+                    tools:visibility="visible" />
+
+                <android.support.v7.widget.AppCompatImageButton
+                    android:id="@+id/call_ib_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_5dp"
+                    android:layout_marginEnd="@dimen/size_5dp"
+                    android:background="@color/transparent"
+                    android:padding="@dimen/size_5dp"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toStartOf="@+id/sms_ib_2"
+                    app:layout_constraintTop_toBottomOf="@+id/telephone_value_tv_1"
+                    app:srcCompat="@drawable/ic_call"
+                    tools:visibility="visible" />
+
+                <android.support.v7.widget.AppCompatImageButton
+                    android:id="@+id/sms_ib_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_5dp"
+                    android:layout_marginEnd="@dimen/size_20dp"
+                    android:background="@color/transparent"
+                    android:padding="@dimen/size_5dp"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/telephone_value_tv_1"
+                    app:srcCompat="@drawable/ic_message"
+                    tools:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/telephone_value_tv_3"
+                    style="@style/TextListSubTitle"
+                    android:layout_width="@dimen/size_0dp"
+                    android:layout_height="@dimen/size_0dp"
+                    android:layout_marginStart="@dimen/size_25dp"
+                    android:layout_marginTop="@dimen/size_5dp"
+                    android:layout_marginEnd="@dimen/size_5dp"
+                    android:gravity="center_vertical"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@+id/call_ib_3"
+                    app:layout_constraintEnd_toStartOf="@+id/call_ib_3"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/call_ib_3"
+                    tools:text="rg;s asfdma;dlf as;fla;df as;faofsd;f saa;faf;f;ld a;slf;f;dlfks;ldf;"
+                    tools:visibility="visible" />
+
+                <android.support.v7.widget.AppCompatImageButton
+                    android:id="@+id/call_ib_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_5dp"
+                    android:layout_marginEnd="@dimen/size_5dp"
+                    android:background="@color/transparent"
+                    android:padding="@dimen/size_5dp"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toStartOf="@+id/sms_ib_3"
+                    app:layout_constraintTop_toBottomOf="@+id/telephone_value_tv_2"
+                    app:srcCompat="@drawable/ic_call"
+                    tools:visibility="visible" />
+
+                <android.support.v7.widget.AppCompatImageButton
+                    android:id="@+id/sms_ib_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_5dp"
+                    android:layout_marginEnd="@dimen/size_20dp"
+                    android:background="@color/transparent"
+                    android:padding="@dimen/size_5dp"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/telephone_value_tv_2"
+                    app:srcCompat="@drawable/ic_message"
+                    tools:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/fax_tv"
+                    style="@style/TextListTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/size_20dp"
+                    android:text="@string/fax"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/telephone_value_tv_3" />
+
+                <View
+                    android:id="@+id/horizontal_ev_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size_1dp"
+                    android:layout_marginStart="@dimen/size_20dp"
+                    android:layout_marginEnd="@dimen/size_20dp"
+                    android:background="@color/colorPrimaryDark"
+                    app:layout_constraintTop_toBottomOf="@+id/fax_tv" />
+
+                <TextView
+                    android:id="@+id/fax_value_tv_1"
+                    style="@style/TextListSubTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/size_25dp"
+                    android:layout_marginTop="@dimen/size_5dp"
+                    android:layout_marginEnd="@dimen/size_20dp"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/horizontal_ev_3"
+                    tools:text="rg;s asfdma;dlf as;fla;df as;faofsd;f saa;faf;f;ld a;slf;f;dlfks;ldf;"
+                    tools:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/fax_value_tv_2"
+                    style="@style/TextListSubTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/size_25dp"
+                    android:layout_marginTop="@dimen/size_5dp"
+                    android:layout_marginEnd="@dimen/size_20dp"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/fax_value_tv_1"
+                    tools:text="rg;s asfdma;dlf as;fla;df as;faofsd;f saa;faf;f;ld a;slf;f;dlfks;ldf;"
+                    tools:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/fax_value_tv_3"
+                    style="@style/TextListSubTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/size_25dp"
+                    android:layout_marginTop="@dimen/size_5dp"
+                    android:layout_marginEnd="@dimen/size_20dp"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/fax_value_tv_2"
+                    tools:text="rg;s asfdma;dlf as;fla;df as;faofsd;f saa;faf;f;ld a;slf;f;dlfks;ldf;"
+                    tools:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/email_tv"
+                    style="@style/TextListTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/size_20dp"
+                    android:text="@string/email"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/fax_value_tv_3" />
+
+                <View
+                    android:id="@+id/horizontal_ev_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size_1dp"
+                    android:layout_marginStart="@dimen/size_20dp"
+                    android:layout_marginEnd="@dimen/size_20dp"
+                    android:background="@color/colorPrimaryDark"
+                    app:layout_constraintTop_toBottomOf="@+id/email_tv" />
+
+                <TextView
+                    android:id="@+id/email_value_tv_1"
+                    style="@style/TextListSubTitle"
+                    android:layout_width="@dimen/size_0dp"
+                    android:layout_height="@dimen/size_0dp"
+                    android:layout_marginStart="@dimen/size_25dp"
+                    android:layout_marginTop="@dimen/size_5dp"
+                    android:layout_marginEnd="@dimen/size_5dp"
+                    android:gravity="center_vertical"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@+id/email_ib_1"
+                    app:layout_constraintEnd_toStartOf="@+id/email_ib_1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/email_ib_1"
+                    tools:text="rg;s asfdma;dlf as;fla;df as;faofsd;f saa;faf;f;ld a;slf;f;dlfks;ldf;"
+                    tools:visibility="visible" />
+
+                <android.support.v7.widget.AppCompatImageButton
+                    android:id="@+id/email_ib_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_5dp"
+                    android:layout_marginEnd="@dimen/size_20dp"
+                    android:background="@color/transparent"
+                    android:padding="@dimen/size_5dp"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/horizontal_ev_4"
+                    app:srcCompat="@drawable/ic_email"
+                    tools:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/email_value_tv_2"
+                    style="@style/TextListSubTitle"
+                    android:layout_width="@dimen/size_0dp"
+                    android:layout_height="@dimen/size_0dp"
+                    android:layout_marginStart="@dimen/size_25dp"
+                    android:layout_marginTop="@dimen/size_5dp"
+                    android:layout_marginEnd="@dimen/size_5dp"
+                    android:gravity="center_vertical"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@+id/email_ib_2"
+                    app:layout_constraintEnd_toStartOf="@+id/email_ib_2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/email_ib_2"
+                    tools:text="rg;s asfdma;dlf as;fla;df as;faofsd;f saa;faf;f;ld a;slf;f;dlfks;ldf;"
+                    tools:visibility="visible" />
+
+                <android.support.v7.widget.AppCompatImageButton
+                    android:id="@+id/email_ib_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_5dp"
+                    android:layout_marginEnd="@dimen/size_20dp"
+                    android:background="@color/transparent"
+                    android:padding="@dimen/size_5dp"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/email_value_tv_1"
+                    app:srcCompat="@drawable/ic_email"
+                    tools:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/email_value_tv_3"
+                    style="@style/TextListSubTitle"
+                    android:layout_width="@dimen/size_0dp"
+                    android:layout_height="@dimen/size_0dp"
+                    android:layout_marginStart="@dimen/size_25dp"
+                    android:layout_marginTop="@dimen/size_5dp"
+                    android:layout_marginEnd="@dimen/size_5dp"
+                    android:gravity="center_vertical"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@+id/email_ib_3"
+                    app:layout_constraintEnd_toStartOf="@+id/email_ib_3"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/email_ib_3"
+                    tools:text="rg;s asfdma;dlf as;fla;df as;faofsd;f saa;faf;f;ld a;slf;f;dlfks;ldf;"
+                    tools:visibility="visible" />
+
+                <android.support.v7.widget.AppCompatImageButton
+                    android:id="@+id/email_ib_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_5dp"
+                    android:layout_marginEnd="@dimen/size_20dp"
+                    android:background="@color/transparent"
+                    android:padding="@dimen/size_5dp"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/email_value_tv_2"
+                    app:srcCompat="@drawable/ic_email"
+                    tools:visibility="visible" />
+            </android.support.constraint.ConstraintLayout>
+        </android.support.v4.widget.NestedScrollView>
+    </android.support.constraint.ConstraintLayout>
+</layout>

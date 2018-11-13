@@ -13,9 +13,9 @@
  * limitations under the License
  */
 
-package com.nurdcoder.android.dphe_phone_directory.data.local.dbstorage;
+package com.nurdcoder.android.dphe_phone_directory.ui.contact_details;
 
-import com.nurdcoder.android.dphe_phone_directory.data.local.contact_list.ContactListService;
+import com.nurdcoder.android.dphe_phone_directory.ui.base.BasePresenter;
 
 /**
  * ****************************************************************************
@@ -37,13 +37,6 @@ import com.nurdcoder.android.dphe_phone_directory.data.local.contact_list.Contac
  * ****************************************************************************
  */
 
-public class DatabaseHelper {
+public class ContactDetailsPresenter extends BasePresenter<ContactDetailsMvpView> {
 
-    public static ContactListService provideArticleService() {
-        return new ContactListService(DatabaseService.on().contactListDao());
-    }
-
-    public static ContactListService provideUserService() {
-        return new ContactListService(DatabaseService.on().contactListDao());
-    }
 }

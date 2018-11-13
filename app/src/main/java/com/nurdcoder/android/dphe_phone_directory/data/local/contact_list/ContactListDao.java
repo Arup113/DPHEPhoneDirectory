@@ -13,7 +13,7 @@
  * limitations under the License
  */
 
-package com.nurdcoder.android.dphe_phone_directory.data.local.user;
+package com.nurdcoder.android.dphe_phone_directory.data.local.contact_list;
 
 import android.arch.lifecycle.LiveData;
 import android.arch.persistence.room.Dao;

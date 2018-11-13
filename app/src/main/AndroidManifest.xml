@@ -25,6 +25,9 @@
         <activity
             android:name=".ui.contact_list.ContactListActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.contact_details.ContactDetailsActivity"
+            android:screenOrientation="portrait" />
 
         <activity
             android:name=".ui.splash.SplashActivity"

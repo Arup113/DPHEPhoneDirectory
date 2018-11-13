@@ -16,6 +16,7 @@
 package com.nurdcoder.android.dphe_phone_directory.ui.contact_list;
 
 import android.support.annotation.NonNull;
+import android.support.v4.view.ViewCompat;
 import android.support.v7.widget.AppCompatImageView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -24,7 +25,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.nurdcoder.android.dphe_phone_directory.R;
-import com.nurdcoder.android.dphe_phone_directory.data.local.user.ContactEntity;
+import com.nurdcoder.android.dphe_phone_directory.data.local.contact_list.ContactEntity;
 
 import java.util.ArrayList;
 
@@ -51,9 +52,11 @@ import java.util.ArrayList;
 public class ContactListRecyclerAdapter extends RecyclerView.Adapter<ContactListRecyclerAdapter.SingleItemRowHolder> {
 
     private ArrayList<ContactEntity> mDataList;
+    private AppItemClickListener mListener;
 
-    public ContactListRecyclerAdapter(ArrayList<ContactEntity> mDataList) {
+    public ContactListRecyclerAdapter(ArrayList<ContactEntity> mDataList, AppItemClickListener mListener) {
         this.mDataList = mDataList;
+        this.mListener = mListener;
     }
 
     @NonNull
@@ -66,8 +69,15 @@ public class ContactListRecyclerAdapter extends RecyclerView.Adapter<ContactList
     @Override
     public void onBindViewHolder(@NonNull final SingleItemRowHolder holder, int position) {
         final ContactEntity itemModel = mDataList.get(position);
+        ViewCompat.setTransitionName(holder.user_iv, itemModel.getNAME_OF_THE_STAFF());
         holder.name_tv.setText(itemModel.getNAME_OF_THE_STAFF());
         holder.designation_tv.setText(itemModel.getDESIGNATION());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mListener.onAppItemClick(holder.getAdapterPosition(), itemModel, holder.user_iv);
+            }
+        });
     }
 
     @Override

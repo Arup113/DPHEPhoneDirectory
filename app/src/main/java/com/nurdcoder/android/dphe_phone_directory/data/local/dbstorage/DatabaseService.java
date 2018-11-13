@@ -23,8 +23,8 @@ import android.content.Context;
 
 import com.fstyle.library.helper.AssetSQLiteOpenHelperFactory;
 import com.nurdcoder.android.dphe_phone_directory.R;
-import com.nurdcoder.android.dphe_phone_directory.data.local.user.ContactEntity;
-import com.nurdcoder.android.dphe_phone_directory.data.local.user.ContactListDao;
+import com.nurdcoder.android.dphe_phone_directory.data.local.contact_list.ContactEntity;
+import com.nurdcoder.android.dphe_phone_directory.data.local.contact_list.ContactListDao;
 import com.nurdcoder.android.util.helper.Converter;
 import com.nurdcoder.android.util.lib.roomdb.AppDatabase;
 
@@ -74,7 +74,7 @@ public abstract class DatabaseService extends AppDatabase {
     */
     private static volatile DatabaseService sInstance;
 
-    // Create the database
+    // Create the databases
     private static DatabaseService createOld(Context context) {
         RoomDatabase.Builder<DatabaseService> builder =
                 Room.databaseBuilder(context, DatabaseService.class, context.getString(R.string.app_name))
@@ -83,7 +83,7 @@ public abstract class DatabaseService extends AppDatabase {
         return builder.build();
     }
 
-    // Get a database instance
+    // Get a databases instance
     public static synchronized DatabaseService on() {
         return sInstance;
     }

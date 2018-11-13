@@ -18,16 +18,21 @@ package com.nurdcoder.android.dphe_phone_directory.ui.contact_list;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.ActivityOptionsCompat;
+import android.support.v4.view.ViewCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.ImageView;
 
 import com.nurdcoder.android.dphe_phone_directory.R;
+import com.nurdcoder.android.dphe_phone_directory.data.local.contact_list.ContactEntity;
 import com.nurdcoder.android.dphe_phone_directory.data.local.dbstorage.DatabaseService;
-import com.nurdcoder.android.dphe_phone_directory.data.local.user.ContactEntity;
 import com.nurdcoder.android.dphe_phone_directory.databinding.ActivitySubCategoryBinding;
 import com.nurdcoder.android.dphe_phone_directory.ui.base.BaseActivity;
+import com.nurdcoder.android.dphe_phone_directory.ui.contact_details.ContactDetailsActivity;
 import com.nurdcoder.android.util.helper.CustomRecyclerItemSpaceDecoration;
 import com.nurdcoder.android.util.helper.ScreenUtils;
+import com.nurdcoder.android.util.helper.ShowLog;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -54,7 +59,7 @@ import io.reactivex.disposables.Disposable;
  * ****************************************************************************
  */
 
-public class ContactListActivity extends BaseActivity<ContactListMvpView, ContactListPresenter> implements ContactListMvpView {
+public class ContactListActivity extends BaseActivity<ContactListMvpView, ContactListPresenter> implements ContactListMvpView, AppItemClickListener {
 
     public static final String EXTRA_CATEGORY = "EXTRA_CATEGORY";
     public static final String EXTRA_SUB_CATEGORY = "EXTRA_SUB_CATEGORY";
@@ -84,12 +89,12 @@ public class ContactListActivity extends BaseActivity<ContactListMvpView, Contac
             mCategory = bundle.getString(EXTRA_CATEGORY);
             mSubCategory = bundle.getString(EXTRA_SUB_CATEGORY);
         }
-        mBinding.headerTv.setText(mCategory);
+        mBinding.headerTv.setText(mSubCategory);
 
 
         mBinding.parentRv.setHasFixedSize(true);
         mDataList = new ArrayList<>();
-        mAdapter = new ContactListRecyclerAdapter(mDataList);
+        mAdapter = new ContactListRecyclerAdapter(mDataList, this);
 
         mBinding.parentRv.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         mBinding.parentRv.addItemDecoration(new CustomRecyclerItemSpaceDecoration(ScreenUtils.dp2px(Objects.requireNonNull(this), 10), 0, ScreenUtils.dp2px(this, 10), ScreenUtils.dp2px(this, 10), ScreenUtils.dp2px(this, 10), ScreenUtils.dp2px(this, 10)));
@@ -108,19 +113,36 @@ public class ContactListActivity extends BaseActivity<ContactListMvpView, Contac
                 .contactListDao()
                 .getAllContactBySubCategory(mSubCategory)
                 .subscribe(testEntities -> {
+                    ShowLog.e("ContactListActivity", "Size: " + testEntities.size());
                     mDataList.addAll(testEntities);
                     mAdapter.notifyDataSetChanged();
                 }, throwable -> {
+                    ShowLog.e("ContactListActivity", "error: " + throwable.getMessage());
                 });
     }
 
     @Override
     protected void stopUI() {
-
+        if (mDisposable != null && !mDisposable.isDisposed()) {
+            mDisposable.dispose();
+        }
     }
 
     @Override
     protected ContactListPresenter initPresenter() {
         return new ContactListPresenter();
+    }
+
+    @Override
+    public void onAppItemClick(int pos, ContactEntity contactEntity, ImageView shareImageView) {
+        Intent intent = new Intent(this, ContactDetailsActivity.class);
+        intent.putExtra(ContactDetailsActivity.EXTRA_TRANSITION_NAME, ViewCompat.getTransitionName(shareImageView));
+        intent.putExtra(ContactDetailsActivity.EXTRA_CONTACT_MODEL, contactEntity);
+
+        ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(
+                this,
+                shareImageView,
+                Objects.requireNonNull(ViewCompat.getTransitionName(shareImageView)));
+        startActivity(intent, options.toBundle());
     }
 }
