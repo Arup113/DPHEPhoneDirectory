@@ -42,7 +42,7 @@ import android.arch.persistence.room.Update;
 
 public interface BaseDao<T> {
     /**
-     * Insert a entity in the database. If the entity already exists, replace it.
+     * Insert a entity in the databases. If the entity already exists, replace it.
      *
      * @param entity the entity to be inserted.
      */
@@ -50,7 +50,7 @@ public interface BaseDao<T> {
     long insert(T entity);
 
     /**
-     * Update a entity in the database.
+     * Update a entity in the databases.
      *
      * @param entity the entity to be updated.
      */
@@ -58,7 +58,7 @@ public interface BaseDao<T> {
     int update(T... entity);
 
     /**
-     * Delete a entity in the database.
+     * Delete a entity in the databases.
      *
      * @param entity the entity to be delete.
      */
