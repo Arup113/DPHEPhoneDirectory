@@ -1,1 +1,19 @@
-[{"outputType":{"type":"APK"},"apkInfo":{"type":"MAIN","splits":[],"versionCode":1,"versionName":"0.0.7","enabled":true,"outputFile":"ICRWallet-0.0.7-release.apk","fullName":"release","baseName":"release"},"path":"ICRWallet-0.0.7-release.apk","properties":{}}]
+[
+  {
+    "outputType": {
+      "type": "APK"
+    },
+    "apkInfo": {
+      "type": "MAIN",
+      "splits": [],
+      "versionCode": 1,
+      "versionName": "0.0.2",
+      "enabled": true,
+      "outputFile": "DPHEPhoneDirectory-0.0.2-release.apk",
+      "fullName": "release",
+      "baseName": "release"
+    },
+    "path": "DPHEPhoneDirectory-0.0.2-release.apk",
+    "properties": {}
+  }
+]

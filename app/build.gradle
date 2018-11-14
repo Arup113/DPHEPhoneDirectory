@@ -15,7 +15,7 @@ android {
         renderscriptTargetApi rootProject.ext.RENDER_SCRIPT_TARGET_API
         renderscriptSupportModeEnabled true
 
-        setProperty("archivesBaseName", "ICRWallet-$versionName")
+        setProperty("archivesBaseName", "DPHEPhoneDirectory-$versionName")
         vectorDrawables.useSupportLibrary = true
 
         //testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
